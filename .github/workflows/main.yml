@@ -24,7 +24,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./worker
-          dockerfile: ./worker/Dockerfile
+          file: ./worker/Dockerfile
           push: false
-          tags: dinaalmahrouqy/CI-CD:latest
+          tags: dinaalmahrouqy/ci-cd:latest
         

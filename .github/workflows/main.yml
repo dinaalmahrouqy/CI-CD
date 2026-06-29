@@ -19,3 +19,13 @@ jobs:
 
       - name: Show Files in Repository
         run: ls -la
+
+
+      - name: build docker image
+        uses: actions/build-push-action@v2
+        with:
+          context: .
+          dockerfile: Dockerfile
+          push: false 
+          tags: 
+        

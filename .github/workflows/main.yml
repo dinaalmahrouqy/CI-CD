@@ -11,21 +11,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: check out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4 # حدثتها لـ v4 عشان تكون أسرع وأحدث وم تطلعش تحذيرات الـ Node
 
       - name: setup java
         uses: actions/setup-java@v3
         with:
-          distribution: 'corretto'
+          distribution: 'corretto' # متصلحة هنا وجاهزة
           java-version: 17 
 
       - name: unit tests
+        working-directory: ./worker # السطر السحري عشان يدخل الفولدر الصح
         run: mvn -B test --file pom.xml
 
       - name: build the application
+        working-directory: ./worker # وهنا كمان عشان الـ Build
         run: |
           mvn clean 
-          mvn -B package --file pom.xml 
-
-  
-
+          mvn -B package --file pom.xml

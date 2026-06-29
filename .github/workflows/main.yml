@@ -27,5 +27,7 @@ jobs:
           context: .
           dockerfile: Dockerfile
           push: false 
-          tags: 
+          tags: dinaalmahrouqy/CI-CD:latest
+
+
         

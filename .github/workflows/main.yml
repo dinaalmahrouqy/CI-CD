@@ -20,14 +20,11 @@ jobs:
       - name: Show Files in Repository
         run: ls -la
 
-
       - name: build docker image
-        uses: actions/build-push-action@v2
+        uses: docker/build-push-action@v2
         with:
           context: ./worker
           dockerfile: ./worker/Dockerfile
           push: false
           tags: dinaalmahrouqy/CI-CD:latest
-
-
         

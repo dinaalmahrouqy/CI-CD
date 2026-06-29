@@ -24,9 +24,9 @@ jobs:
       - name: build docker image
         uses: actions/build-push-action@v2
         with:
-          context: .
-          dockerfile: Dockerfile
-          push: false 
+          context: ./worker
+          dockerfile: ./worker/Dockerfile
+          push: false
           tags: dinaalmahrouqy/CI-CD:latest
 
 
